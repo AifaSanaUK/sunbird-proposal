@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import logo from "@/assets/sunbird-logo.png";
+import systemFlow from "@/assets/system-flow.png";
 import type { ProposalData } from "@/lib/proposal-defaults";
 
 const Header = () => (
