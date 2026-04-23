@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Roboto', 'system-ui', 'sans-serif'],
+        roboto: ['Roboto', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -23,6 +27,7 @@ export default {
           DEFAULT: "hsl(var(--brand))",
           foreground: "hsl(var(--brand-foreground))",
           dark: "hsl(var(--brand-dark))",
+          light: "hsl(var(--brand-light))",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
