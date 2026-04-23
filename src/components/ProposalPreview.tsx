@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import logo from "@/assets/sunbird-logo.png";
+import systemFlow from "@/assets/system-flow.png";
 import type { ProposalData } from "@/lib/proposal-defaults";
 
 const Header = () => (
@@ -164,6 +165,9 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           ].map((t, i) => (
             <div key={i} className="border border-brand/40 rounded p-2 bg-brand/5 text-center">{t}</div>
           ))}
+        </div>
+        <div className="mt-4 flex justify-center">
+          <img src={systemFlow} alt="System flow diagram showing solar, home, and grid connections" className="w-full max-w-[520px] object-contain" />
         </div>
       </Page>
 
