@@ -4,7 +4,7 @@ import type { ProposalData } from "@/lib/proposal-defaults";
 
 const Header = () => (
   <div className="flex items-center justify-between border-b-4 border-brand pb-3 mb-6">
-    <img src={logo} alt="Sunbird Power Solutions" className="h-16 object-contain" />
+    <img src={logo} alt="Sunbird Power Solutions" className="h-24 object-contain" />
     <div className="text-right text-[10px] leading-tight text-foreground/70">
       <div className="font-semibold text-brand-dark">SUNBIRD POWER SOLUTIONS</div>
       <div>First floor, AKN Arcade, Golf Link Road</div>
