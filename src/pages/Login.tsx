@@ -31,7 +31,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-brand-light via-background to-brand-light/40">
       <div className="w-full max-w-md">
         <div className="flex justify-center mb-8">
-          <img src={logo} alt="Sunbird Power Solutions" className="h-20 object-contain" />
+          <img src={logo} alt="Sunbird Power Solutions" className="h-32 object-contain" />
         </div>
         <Card className="p-8 shadow-xl border-brand/20">
           <div className="text-center mb-6">

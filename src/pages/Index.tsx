@@ -34,7 +34,7 @@ const Index = () => {
       <header className="bg-white border-b border-border sticky top-0 z-10 shadow-sm">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
-            <img src={logo} alt="Sunbird Power Solutions" className="h-10 sm:h-12 object-contain shrink-0" />
+            <img src={logo} alt="Sunbird Power Solutions" className="h-16 sm:h-20 object-contain shrink-0" />
             <div className="hidden sm:block min-w-0">
               <h1 className="font-bold text-base leading-tight text-foreground truncate">Proposal Generator</h1>
               <p className="text-xs text-muted-foreground truncate">Fill details, preview live, download as PDF</p>
