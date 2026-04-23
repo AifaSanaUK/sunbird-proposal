@@ -166,6 +166,9 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
             <div key={i} className="border border-brand/40 rounded p-2 bg-brand/5 text-center">{t}</div>
           ))}
         </div>
+        <div className="mt-4 flex justify-center">
+          <img src={systemFlow} alt="System flow diagram showing solar, home, and grid connections" className="w-full max-w-[520px] object-contain" />
+        </div>
       </Page>
 
       {/* Page 4: Exclusions + Bank */}
