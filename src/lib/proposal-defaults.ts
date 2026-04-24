@@ -5,6 +5,7 @@ export type BankDetails = { bank: string; branch: string; accountNumber: string;
 export type ProposalData = {
   // Client
   clientName: string;
+  companyName: string;
   place: string;
   date: string;
   capacityKwp: string;
@@ -27,6 +28,7 @@ export type ProposalData = {
 
 export const defaultProposal: ProposalData = {
   clientName: "",
+  companyName: "Sunbird Power Solutions",
   place: "",
   date: new Date().toISOString().slice(0, 10),
   capacityKwp: "5",

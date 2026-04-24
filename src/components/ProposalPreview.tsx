@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import logo from "@/assets/sunbird-logo.png";
 import systemFlow from "@/assets/system-flow.png";
+import seal from "@/assets/company-seal.png";
 import type { ProposalData } from "@/lib/proposal-defaults";
 
 const Header = () => (
@@ -212,20 +213,18 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         </ul>
 
         <p className="text-sm mb-2">In case of any further information or clarification, please feel free to contact us.</p>
-        <p className="text-sm font-semibold mb-12">Thanking you and assuring you of our best services.</p>
+        <p className="text-sm font-semibold mb-10">Thanking you and assuring you of our best services.</p>
 
-        <div className="grid grid-cols-2 gap-12 mt-16 text-sm">
-          <div>
-            <div className="font-bold underline mb-10">Client:</div>
-            <div className="border-t border-foreground/40 pt-1">Name: {data.clientName}</div>
-            <div className="border-t border-foreground/40 mt-6 pt-1">Signature</div>
-            <div className="border-t border-foreground/40 mt-6 pt-1">Date: {data.date}</div>
-          </div>
-          <div>
-            <div className="font-bold underline mb-10">Sunbird:</div>
-            <div className="border-t border-foreground/40 pt-1">Name</div>
-            <div className="border-t border-foreground/40 mt-6 pt-1">Signature</div>
-            <div className="border-t border-foreground/40 mt-6 pt-1">Date</div>
+        <div className="mt-12 flex justify-end">
+          <div className="text-center">
+            <div className="text-sm font-bold text-brand-dark mb-2">For {data.companyName || "Sunbird Power Solutions"}</div>
+            <div className="flex justify-center my-2">
+              <img src={seal} alt="Company Seal" className="h-28 w-28 object-contain" />
+            </div>
+            <div className="border-t border-foreground/60 pt-1 mt-2 text-sm font-semibold min-w-[220px]">
+              Authorised Signatory
+            </div>
+            <div className="text-xs text-foreground/70 mt-2">Date: {data.date}</div>
           </div>
         </div>
       </Page>
