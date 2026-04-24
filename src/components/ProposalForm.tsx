@@ -18,10 +18,11 @@ export const ProposalForm = ({ data, onChange }: Props) => {
         <h3 className="font-bold text-brand-dark mb-3">Client Details</h3>
         <div className="grid grid-cols-2 gap-3">
           <div><Label>Client Name</Label><Input value={data.clientName} onChange={e => set("clientName", e.target.value)} placeholder="Mr/Ms. ..." /></div>
+          <div><Label>Company Name</Label><Input value={data.companyName} onChange={e => set("companyName", e.target.value)} placeholder="Sunbird Power Solutions" /></div>
           <div><Label>Place</Label><Input value={data.place} onChange={e => set("place", e.target.value)} /></div>
           <div><Label>Date</Label><Input type="date" value={data.date} onChange={e => set("date", e.target.value)} /></div>
           <div><Label>Capacity (kWp)</Label><Input value={data.capacityKwp} onChange={e => set("capacityKwp", e.target.value)} /></div>
-          <div className="col-span-2"><Label>Units / sunny day</Label><Input value={data.unitsPerSunnyDay} onChange={e => set("unitsPerSunnyDay", e.target.value)} /></div>
+          <div><Label>Units / sunny day</Label><Input value={data.unitsPerSunnyDay} onChange={e => set("unitsPerSunnyDay", e.target.value)} /></div>
         </div>
       </div>
 
