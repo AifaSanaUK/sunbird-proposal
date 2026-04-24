@@ -216,15 +216,12 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         <p className="text-sm font-semibold mb-10">Thanking you and assuring you of our best services.</p>
 
         <div className="mt-12 flex justify-end">
-          <div className="text-center">
-            <div className="text-sm font-bold text-brand-dark mb-2">For {data.companyName || "Sunbird Power Solutions"}</div>
-            <div className="flex justify-center my-2">
-              <img src={seal} alt="Company Seal" className="h-28 w-28 object-contain" />
+          <div className="text-center min-w-[240px]">
+            <div className="text-sm font-bold text-brand-dark mb-3">{data.companyName || "Sunbird Power Solutions"}</div>
+            <div className="flex justify-center">
+              <img src={seal} alt="Company Seal" className="h-32 w-32 object-contain" />
             </div>
-            <div className="border-t border-foreground/60 pt-1 mt-2 text-sm font-semibold min-w-[220px]">
-              Authorised Signatory
-            </div>
-            <div className="text-xs text-foreground/70 mt-2">Date: {data.date}</div>
+            <div className="text-xs text-foreground/70 mt-3">Date: {data.date}</div>
           </div>
         </div>
       </Page>
