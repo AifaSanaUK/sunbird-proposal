@@ -115,7 +115,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
 
         <SectionTitle>Generation Calculation</SectionTitle>
         <div className="text-sm bg-brand/10 border border-brand/30 rounded p-3">
-          Unit generation per sunny day: <span className="font-bold text-brand-dark">Up to {data.unitsPerSunnyDay} units</span>
+          Unit generation per sunny day: <span className="font-bold text-brand-dark">Average {data.unitsPerSunnyDay} units</span>
         </div>
       </Page>
 
