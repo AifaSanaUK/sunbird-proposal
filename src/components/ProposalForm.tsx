@@ -4,13 +4,32 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Trash2, Plus } from "lucide-react";
-import type { ProposalData } from "@/lib/proposal-defaults";
+import type { ProposalData, SystemType } from "@/lib/proposal-defaults";
 
 type Props = { data: ProposalData; onChange: (d: ProposalData) => void };
 
 export const ProposalForm = ({ data, onChange }: Props) => {
   const set = <K extends keyof ProposalData>(k: K, v: ProposalData[K]) => onChange({ ...data, [k]: v });
+
+  const handleSystemTypeChange = (value: SystemType) => {
+    let bom = data.bom;
+    const hasBattery = bom.some(b => b.particular.toLowerCase() === "battery");
+    if (value === "Hybrid" && !hasBattery) {
+      bom = [...bom, { particular: "Battery", specification: "", make: "" }];
+      // pad to 20 rows
+      while (bom.length < 20) bom.push({ particular: "", specification: "", make: "" });
+    } else if (value === "ON-GRID" && hasBattery) {
+      // Remove battery row and trailing empty rows added for hybrid
+      bom = bom.filter(b => b.particular.toLowerCase() !== "battery");
+      while (bom.length > 0 && !bom[bom.length - 1].particular && !bom[bom.length - 1].specification && !bom[bom.length - 1].make) {
+        bom.pop();
+      }
+    }
+    onChange({ ...data, systemType: value, bom });
+  };
+
 
   return (
     <Card className="p-5 space-y-5">
