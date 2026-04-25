@@ -2,6 +2,8 @@ export type BomItem = { particular: string; specification: string; make: string 
 export type CostItem = { particular: string; amount: string };
 export type BankDetails = { bank: string; branch: string; accountNumber: string; accountName: string; ifsc: string };
 
+export type SystemType = "ON-GRID" | "Hybrid";
+
 export type ProposalData = {
   // Client
   clientName: string;
@@ -9,6 +11,7 @@ export type ProposalData = {
   place: string;
   date: string;
   capacityKwp: string;
+  systemType: SystemType;
   // Generation
   unitsPerSunnyDay: string;
   // BOM
@@ -31,18 +34,19 @@ export const defaultProposal: ProposalData = {
   companyName: "Sunbird Power Solutions",
   place: "",
   date: new Date().toISOString().slice(0, 10),
-  capacityKwp: "5",
-  unitsPerSunnyDay: "20",
+  capacityKwp: "3",
+  systemType: "ON-GRID",
+  unitsPerSunnyDay: "12",
   bom: [
-    { particular: "Solar panel", specification: "MONOPERC HALF CUT DCR MODULE-540 WATT 9nos", make: "APS" },
-    { particular: "Inverter", specification: "5KW 1 Phase", make: "APS" },
+    { particular: "Solar panel", specification: "MONOPERC HALF CUT DCR MODULE-540 WATT 9nos", make: "ADANI" },
+    { particular: "Inverter", specification: "5KW 1 Phase", make: "SUNWAYS/GOODWE" },
     { particular: "Panel structure for flat roof", specification: "With 1 meter panel height", make: "APPOLO/EQUIVALENT" },
     { particular: "Solar meter", specification: "1 phase", make: "Secure/L&T" },
     { particular: "DCDB", specification: "5kw 1 IN 2 OUT", make: "C&S/Havells/Finder" },
     { particular: "ACDB", specification: "220V, 50HZ", make: "C&S/Havells/Finder" },
-    { particular: "DC Cable", specification: "4SQ - 30 meter", make: "Realcab/Polycab/Equivalent" },
-    { particular: "AC cable", specification: "4SQ - 10 meter", make: "Realcab/RR/Equivalent" },
-    { particular: "Earthing copper cable", specification: "10sq - 20 meter", make: "RR/Equivalent" },
+    { particular: "DC Cable", specification: "4SQ - As much as needed", make: "Realcab/Polycab/Equivalent" },
+    { particular: "AC cable", specification: "4SQ - As much as needed", make: "Realcab/RR/Equivalent" },
+    { particular: "Earthing copper cable", specification: "10sq - As much as needed", make: "RR/Equivalent" },
     { particular: "Lightning arrester", specification: "As per standard", make: "Excel/Equivalent" },
     { particular: "Earthing rod", specification: "As per Standard", make: "Excel/Equivalent" },
     { particular: "Backfill compound bag (chemical)", specification: "20 kg", make: "Excel/Equivalent" },
@@ -85,8 +89,8 @@ export const defaultProposal: ProposalData = {
     "Natural calamities are not included in any product warranty.",
   ],
   warranty: [
-    "Solar Inverter warranted by SUNWAYS — 10 Years.",
-    "Solar PV Modules: PREMIER (As per MNRE standard) — 12-year manufacturer warranty and 25/30-year performance warranty as per the Module Manufacturer.",
+    "Solar Inverter warranted by SUNWAYS — 7 Years.",
+    "Solar PV Modules: ADANI (As per MNRE standard) — 12-year manufacturer warranty and 25/30-year performance warranty as per the Module Manufacturer.",
     "Service — 5 Years free service (panel washing not included).",
   ],
 };

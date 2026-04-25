@@ -60,7 +60,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         </div>
 
         <h1 className="text-2xl font-extrabold text-brand-dark text-center my-6 leading-tight">
-          PROPOSAL FOR {data.capacityKwp || "___"}-KWP ON-GRID SOLAR POWER PLANT
+          PROPOSAL FOR {data.capacityKwp || "___"}-KWP {data.systemType} SOLAR POWER PLANT
         </h1>
 
         <p className="text-sm leading-relaxed mb-4">Dear Sir/Madam,</p>
@@ -115,7 +115,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
 
         <SectionTitle>Generation Calculation</SectionTitle>
         <div className="text-sm bg-brand/10 border border-brand/30 rounded p-3">
-          Unit generation per sunny day: <span className="font-bold text-brand-dark">Up to {data.unitsPerSunnyDay} units</span>
+          Unit generation per sunny day: <span className="font-bold text-brand-dark">Average {data.unitsPerSunnyDay} units</span>
         </div>
       </Page>
 
@@ -123,7 +123,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
       <Page>
         <Header />
         <SectionTitle>Project Cost</SectionTitle>
-        <div className="text-sm font-semibold mb-2">{data.capacityKwp}KWP ON-GRID SOLAR POWER PLANT</div>
+        <div className="text-sm font-semibold mb-2">{data.capacityKwp}KWP {data.systemType} SOLAR POWER PLANT</div>
         <table className="w-full text-xs border-collapse mb-6">
           <thead>
             <tr className="bg-brand text-brand-foreground">
@@ -194,23 +194,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           {data.exclusions.map((e, i) => <li key={i}>{e}</li>)}
         </ul>
 
-        <SectionTitle>Bank Details</SectionTitle>
-        <table className="w-full text-sm border-collapse mb-6">
-          <tbody>
-            {[
-              ["BANK", data.bank.bank],
-              ["BRANCH", data.bank.branch],
-              ["ACCOUNT NUMBER", data.bank.accountNumber],
-              ["ACCOUNT NAME", data.bank.accountName],
-              ["IFSC CODE", data.bank.ifsc],
-            ].map(([k, v]) => (
-              <tr key={k}>
-                <td className="border border-brand/40 bg-brand/10 px-3 py-2 font-bold w-44">{k}</td>
-                <td className="border border-brand/40 px-3 py-2">{v}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+
 
         <SectionTitle>Terms & Conditions</SectionTitle>
         <ul className="list-disc pl-6 text-sm space-y-1">
