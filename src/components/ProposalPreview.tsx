@@ -88,8 +88,8 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           <div>Mob: 8136888101</div>
         </div>
 
-        <div className="mt-2 flex justify-center">
-          <img src={whatWeDo} alt="What We Do — Solar Installation, System Design, Maintenance, Consulting" className="w-full max-w-[640px] object-contain" />
+        <div className="mt-4 flex justify-center">
+          <img src={whatWeDo} alt="What We Do — Solar Installation, System Design, Maintenance, Consulting" className="w-full object-contain" />
         </div>
       </Page>
 
