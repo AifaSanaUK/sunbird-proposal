@@ -45,9 +45,14 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
       {/* Page 1: Cover image */}
       <div
         className="proposal-page relative bg-white text-foreground mx-auto shadow-lg overflow-hidden"
-        style={{ width: "210mm", minHeight: "297mm", padding: 0 }}
+        style={{ width: "210mm", height: "297mm", padding: 0 }}
       >
-        <img src={coverImage} alt="Business Proposal Cover" className="w-full h-full object-cover" style={{ minHeight: "297mm" }} />
+        <img
+          src={coverImage}
+          alt="Business Proposal Cover"
+          className="block"
+          style={{ width: "210mm", height: "297mm", objectFit: "fill" }}
+        />
       </div>
 
       {/* Page 2: Client details + cover letter + What We Do image */}
