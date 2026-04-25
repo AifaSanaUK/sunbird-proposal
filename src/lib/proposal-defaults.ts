@@ -2,6 +2,8 @@ export type BomItem = { particular: string; specification: string; make: string 
 export type CostItem = { particular: string; amount: string };
 export type BankDetails = { bank: string; branch: string; accountNumber: string; accountName: string; ifsc: string };
 
+export type SystemType = "ON-GRID" | "Hybrid";
+
 export type ProposalData = {
   // Client
   clientName: string;
@@ -9,6 +11,7 @@ export type ProposalData = {
   place: string;
   date: string;
   capacityKwp: string;
+  systemType: SystemType;
   // Generation
   unitsPerSunnyDay: string;
   // BOM
