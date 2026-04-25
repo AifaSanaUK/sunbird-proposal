@@ -123,7 +123,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
       <Page>
         <Header />
         <SectionTitle>Project Cost</SectionTitle>
-        <div className="text-sm font-semibold mb-2">{data.capacityKwp}KWP ON-GRID SOLAR POWER PLANT</div>
+        <div className="text-sm font-semibold mb-2">{data.capacityKwp}KWP {data.systemType} SOLAR POWER PLANT</div>
         <table className="w-full text-xs border-collapse mb-6">
           <thead>
             <tr className="bg-brand text-brand-foreground">
