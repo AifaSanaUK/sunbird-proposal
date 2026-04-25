@@ -60,7 +60,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         </div>
 
         <h1 className="text-2xl font-extrabold text-brand-dark text-center my-6 leading-tight">
-          PROPOSAL FOR {data.capacityKwp || "___"}-KWP ON-GRID SOLAR POWER PLANT
+          PROPOSAL FOR {data.capacityKwp || "___"}-KWP {data.systemType} SOLAR POWER PLANT
         </h1>
 
         <p className="text-sm leading-relaxed mb-4">Dear Sir/Madam,</p>
