@@ -2,11 +2,13 @@ import { forwardRef } from "react";
 import logo from "@/assets/sunbird-logo.png";
 import systemFlow from "@/assets/system-flow.png";
 import seal from "@/assets/company-seal.png";
+import coverImage from "@/assets/proposal-cover.png";
+import whatWeDo from "@/assets/what-we-do.png";
 import type { ProposalData } from "@/lib/proposal-defaults";
 
 const Header = () => (
   <div className="flex items-center justify-between border-b-4 border-brand pb-3 mb-6">
-    <img src={logo} alt="Sunbird Power Solutions" className="h-24 object-contain" />
+    <img src={logo} alt="Sunbird Power Solutions" className="h-36 object-contain" />
     <div className="text-right text-[10px] leading-tight text-foreground/70">
       <div className="font-semibold text-brand-dark">SUNBIRD POWER SOLUTIONS</div>
       <div>First floor, AKN Arcade, Golf Link Road</div>
@@ -40,7 +42,15 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
 export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }>(({ data }, ref) => {
   return (
     <div ref={ref} className="space-y-4">
-      {/* Page 1: Cover letter */}
+      {/* Page 1: Cover image */}
+      <div
+        className="proposal-page relative bg-white text-foreground mx-auto shadow-lg overflow-hidden"
+        style={{ width: "210mm", minHeight: "297mm", padding: 0 }}
+      >
+        <img src={coverImage} alt="Business Proposal Cover" className="w-full h-full object-cover" style={{ minHeight: "297mm" }} />
+      </div>
+
+      {/* Page 2: Client details + cover letter + What We Do image */}
       <Page>
         <Header />
         <div className="text-sm space-y-1 mb-6">
@@ -67,10 +77,14 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           free to contact us. We look forward to serving you and helping you make a smart investment in sustainable
           energy.
         </p>
-        <div className="text-sm mt-8">
+        <div className="text-sm mt-6 mb-4">
           <div className="font-semibold">Warm Regards,</div>
           <div>Sunbird Power Solutions</div>
           <div>Mob: 8136888101</div>
+        </div>
+
+        <div className="mt-4 flex justify-center">
+          <img src={whatWeDo} alt="What We Do — Solar Installation, System Design, Maintenance, Consulting" className="w-full max-w-[640px] object-contain" />
         </div>
       </Page>
 
