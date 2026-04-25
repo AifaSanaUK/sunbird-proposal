@@ -42,6 +42,16 @@ export const ProposalForm = ({ data, onChange }: Props) => {
           <div><Label>Date</Label><Input type="date" value={data.date} onChange={e => set("date", e.target.value)} /></div>
           <div><Label>Capacity (kWp)</Label><Input value={data.capacityKwp} onChange={e => set("capacityKwp", e.target.value)} /></div>
           <div><Label>Units / sunny day</Label><Input value={data.unitsPerSunnyDay} onChange={e => set("unitsPerSunnyDay", e.target.value)} /></div>
+          <div className="col-span-2">
+            <Label>System Type</Label>
+            <Select value={data.systemType} onValueChange={(v) => handleSystemTypeChange(v as SystemType)}>
+              <SelectTrigger><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="ON-GRID">ON-GRID</SelectItem>
+                <SelectItem value="Hybrid">Hybrid</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
       </div>
 
