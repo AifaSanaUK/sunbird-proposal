@@ -89,8 +89,8 @@ export const defaultProposal: ProposalData = {
     "Natural calamities are not included in any product warranty.",
   ],
   warranty: [
-    "Solar Inverter warranted by SUNWAYS — 10 Years.",
-    "Solar PV Modules: PREMIER (As per MNRE standard) — 12-year manufacturer warranty and 25/30-year performance warranty as per the Module Manufacturer.",
+    "Solar Inverter warranted by SUNWAYS — 7 Years.",
+    "Solar PV Modules: ADANI (As per MNRE standard) — 12-year manufacturer warranty and 25/30-year performance warranty as per the Module Manufacturer.",
     "Service — 5 Years free service (panel washing not included).",
   ],
 };
