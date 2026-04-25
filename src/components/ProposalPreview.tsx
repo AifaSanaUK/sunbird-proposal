@@ -194,23 +194,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           {data.exclusions.map((e, i) => <li key={i}>{e}</li>)}
         </ul>
 
-        <SectionTitle>Bank Details</SectionTitle>
-        <table className="w-full text-sm border-collapse mb-6">
-          <tbody>
-            {[
-              ["BANK", data.bank.bank],
-              ["BRANCH", data.bank.branch],
-              ["ACCOUNT NUMBER", data.bank.accountNumber],
-              ["ACCOUNT NAME", data.bank.accountName],
-              ["IFSC CODE", data.bank.ifsc],
-            ].map(([k, v]) => (
-              <tr key={k}>
-                <td className="border border-brand/40 bg-brand/10 px-3 py-2 font-bold w-44">{k}</td>
-                <td className="border border-brand/40 px-3 py-2">{v}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+
 
         <SectionTitle>Terms & Conditions</SectionTitle>
         <ul className="list-disc pl-6 text-sm space-y-1">
