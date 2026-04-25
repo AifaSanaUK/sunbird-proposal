@@ -45,9 +45,14 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
       {/* Page 1: Cover image */}
       <div
         className="proposal-page relative bg-white text-foreground mx-auto shadow-lg overflow-hidden"
-        style={{ width: "210mm", minHeight: "297mm", padding: 0 }}
+        style={{ width: "210mm", height: "297mm", padding: 0 }}
       >
-        <img src={coverImage} alt="Business Proposal Cover" className="w-full h-full object-cover" style={{ minHeight: "297mm" }} />
+        <img
+          src={coverImage}
+          alt="Business Proposal Cover"
+          className="block"
+          style={{ width: "210mm", height: "297mm", objectFit: "fill" }}
+        />
       </div>
 
       {/* Page 2: Client details + cover letter + What We Do image */}
@@ -83,8 +88,8 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           <div>Mob: 8136888101</div>
         </div>
 
-        <div className="mt-2 flex justify-center">
-          <img src={whatWeDo} alt="What We Do — Solar Installation, System Design, Maintenance, Consulting" className="w-full max-w-[640px] object-contain" />
+        <div className="mt-4 flex justify-center">
+          <img src={whatWeDo} alt="What We Do — Solar Installation, System Design, Maintenance, Consulting" className="w-full object-contain" />
         </div>
       </Page>
 
