@@ -68,28 +68,28 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           PROPOSAL FOR {data.capacityKwp || "___"}-KWP {data.systemType} SOLAR POWER PLANT
         </h1>
 
-        <p className="text-sm leading-relaxed mb-4">Dear Sir/Madam,</p>
-        <p className="text-sm leading-relaxed text-justify mb-4">
+        <p className="text-sm leading-snug mb-3">Dear Sir/Madam,</p>
+        <p className="text-sm leading-snug text-left mb-3" style={{ wordSpacing: "normal", hyphens: "none" }}>
           First and foremost, we sincerely thank you for giving us the opportunity to assess your property and evaluate
           your power consumption requirements. After carefully understanding your energy needs and reviewing the site
           layout, we are pleased to present our Solar Power System Proposal. This system has been thoughtfully designed
           to significantly reduce your electricity expenses while providing a reliable and uninterrupted power source,
           subject to usage remaining within the assessed load values.
         </p>
-        <p className="text-sm leading-relaxed text-justify mb-4">
+        <p className="text-sm leading-snug text-left mb-3" style={{ wordSpacing: "normal", hyphens: "none" }}>
           Our proposed solution aims to deliver long-term cost savings while supporting a cleaner, greener, and more
           sustainable energy future. Should you require any further clarification or technical details, please feel
           free to contact us. We look forward to serving you and helping you make a smart investment in sustainable
           energy.
         </p>
-        <div className="text-sm mt-4 mb-2">
+        <div className="text-sm mt-2 mb-2">
           <div className="font-semibold">Warm Regards,</div>
           <div>Sunbird Power Solutions</div>
           <div>Mob: 8136888101</div>
         </div>
 
-        <div className="mt-4 flex justify-center">
-          <img src={whatWeDo} alt="What We Do — Solar Installation, System Design, Maintenance, Consulting" className="w-full object-contain" />
+        <div className="flex justify-center">
+          <img src={whatWeDo} alt="What We Do — Solar Installation, System Design, Maintenance, Consulting" className="w-full object-contain block" />
         </div>
       </Page>
 
