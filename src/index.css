@@ -96,6 +96,10 @@
 }
 
 /* Ensure proposal pages render at fixed A4 width regardless of viewport */
-.proposal-page {
-  font-family: 'Roboto', system-ui, sans-serif;
+.proposal-page,
+.proposal-page * {
+  font-family: 'Lato', 'Calibri', 'Segoe UI', system-ui, sans-serif !important;
+  font-feature-settings: "liga", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
