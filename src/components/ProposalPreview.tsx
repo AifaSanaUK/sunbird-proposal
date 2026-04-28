@@ -64,25 +64,25 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           <div><span className="font-semibold">Date:</span> {data.date || "____/____/______"}</div>
         </div>
 
-        <h1 className="text-2xl font-extrabold text-brand-dark text-center my-6 leading-tight">
+        <h1 className="text-xl font-extrabold text-brand-dark text-center my-4 leading-tight tracking-tight">
           PROPOSAL FOR {data.capacityKwp || "___"}-KWP {data.systemType} SOLAR POWER PLANT
         </h1>
 
-        <p className="text-sm leading-snug mb-3">Dear Sir/Madam,</p>
-        <p className="text-sm leading-snug text-left mb-3" style={{ wordSpacing: "normal", hyphens: "none" }}>
+        <p className="text-[13px] leading-relaxed mb-2">Dear Sir/Madam,</p>
+        <p className="text-[13px] leading-relaxed text-left mb-2" style={{ wordSpacing: "normal", hyphens: "none" }}>
           First and foremost, we sincerely thank you for giving us the opportunity to assess your property and evaluate
           your power consumption requirements. After carefully understanding your energy needs and reviewing the site
           layout, we are pleased to present our Solar Power System Proposal. This system has been thoughtfully designed
           to significantly reduce your electricity expenses while providing a reliable and uninterrupted power source,
           subject to usage remaining within the assessed load values.
         </p>
-        <p className="text-sm leading-snug text-left mb-3" style={{ wordSpacing: "normal", hyphens: "none" }}>
+        <p className="text-[13px] leading-relaxed text-left mb-2" style={{ wordSpacing: "normal", hyphens: "none" }}>
           Our proposed solution aims to deliver long-term cost savings while supporting a cleaner, greener, and more
           sustainable energy future. Should you require any further clarification or technical details, please feel
           free to contact us. We look forward to serving you and helping you make a smart investment in sustainable
           energy.
         </p>
-        <div className="text-sm mt-2 mb-2">
+        <div className="text-[13px] mt-1 mb-3 leading-relaxed">
           <div className="font-semibold">Warm Regards,</div>
           <div>Sunbird Power Solutions</div>
           <div>Mob: 8136888101</div>
