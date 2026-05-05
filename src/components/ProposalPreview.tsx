@@ -100,26 +100,26 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         <SectionTitle>Bill of Material</SectionTitle>
         <table className="w-full text-[10px] border-collapse" style={{tableLayout: 'fixed', wordBreak: 'break-word'}}>
           <colgroup>
-            <col style={{width: '7%'}} />
+            <col style={{width: '8%'}} />
             <col style={{width: '28%'}} />
             <col style={{width: '40%'}} />
-            <col style={{width: '25%'}} />
+            <col style={{width: '24%'}} />
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
-              <th className="border border-brand-dark px-1 py-1 text-center align-middle">No</th>
-              <th className="border border-brand-dark px-1 py-1 text-left align-middle">Particular</th>
-              <th className="border border-brand-dark px-1 py-1 text-left align-middle">Specification</th>
-              <th className="border border-brand-dark px-1 py-1 text-left align-middle">Make</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-center align-middle">No</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-left align-middle">Particular</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-left align-middle">Specification</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-left align-middle">Make</th>
             </tr>
           </thead>
           <tbody>
             {data.bom.map((row, i) => (
               <tr key={i} className={i % 2 ? "bg-brand/5" : ""}>
-                <td className="border border-brand/30 px-1 py-1 text-center align-top">{i + 1}</td>
-                <td className="border border-brand/30 px-1 py-1 align-top">{row.particular}</td>
-                <td className="border border-brand/30 px-1 py-1 align-top">{row.specification}</td>
-                <td className="border border-brand/30 px-1 py-1 align-top">{row.make}</td>
+                <td className="border border-brand/30 px-2 py-2.5 text-center align-middle">{i + 1}</td>
+                <td className="border border-brand/30 px-2 py-2.5 align-middle">{row.particular}</td>
+                <td className="border border-brand/30 px-2 py-2.5 align-middle">{row.specification}</td>
+                <td className="border border-brand/30 px-2 py-2.5 align-middle">{row.make}</td>
               </tr>
             ))}
           </tbody>
@@ -138,28 +138,28 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         <div className="text-sm font-semibold mb-2">{data.capacityKwp}KWP {data.systemType} SOLAR POWER PLANT</div>
         <table className="w-full text-[10px] border-collapse mb-6" style={{tableLayout: 'fixed', wordBreak: 'break-word'}}>
           <colgroup>
-            <col style={{width: '36px'}} />
-            <col />
-            <col style={{width: '90px'}} />
+            <col style={{width: '10%'}} />
+            <col style={{width: '70%'}} />
+            <col style={{width: '20%'}} />
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
-              <th className="border border-brand-dark px-1 py-1 text-center">SL.NO</th>
-              <th className="border border-brand-dark px-1 py-1 text-left">Particulars</th>
-              <th className="border border-brand-dark px-1 py-1 text-right">Amount (₹)</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-center align-middle">SL.NO</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-left align-middle">Particulars</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-right align-middle">Amount (₹)</th>
             </tr>
           </thead>
           <tbody>
             {data.projectCost.map((c, i) => (
               <tr key={i}>
-                <td className="border border-brand/30 px-1 py-1 text-center">{i + 1}</td>
-                <td className="border border-brand/30 px-1 py-1">{c.particular}</td>
-                <td className="border border-brand/30 px-1 py-1 text-right">{c.amount}</td>
+                <td className="border border-brand/30 px-2 py-2.5 text-center align-middle">{i + 1}</td>
+                <td className="border border-brand/30 px-2 py-2.5 align-middle">{c.particular}</td>
+                <td className="border border-brand/30 px-2 py-2.5 text-right align-middle">{c.amount}</td>
               </tr>
             ))}
             <tr className="bg-brand/15 font-bold">
-              <td colSpan={2} className="border border-brand-dark px-1 py-1.5 text-right text-[9px]">TOTAL SYSTEM COST TO BE PAID BY CUSTOMER</td>
-              <td className="border border-brand-dark px-1 py-1.5 text-right">{data.totalSystemCost}</td>
+              <td colSpan={2} className="border border-brand-dark px-2 py-3 text-right align-middle text-[9px]">TOTAL SYSTEM COST TO BE PAID BY CUSTOMER</td>
+              <td className="border border-brand-dark px-2 py-3 text-right align-middle">{data.totalSystemCost}</td>
             </tr>
           </tbody>
         </table>
@@ -167,50 +167,50 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         <SectionTitle>For Grid Connectivity</SectionTitle>
         <table className="w-full text-[10px] border-collapse mb-6" style={{tableLayout: 'fixed', wordBreak: 'break-word'}}>
           <colgroup>
-            <col style={{width: '36px'}} />
-            <col />
-            <col style={{width: '90px'}} />
+            <col style={{width: '10%'}} />
+            <col style={{width: '70%'}} />
+            <col style={{width: '20%'}} />
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
-              <th className="border border-brand-dark px-1 py-1 text-center">SL.NO</th>
-              <th className="border border-brand-dark px-1 py-1 text-left">Particulars</th>
-              <th className="border border-brand-dark px-1 py-1 text-right">Amount (₹)</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-center align-middle">SL.NO</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-left align-middle">Particulars</th>
+              <th className="border border-brand-dark px-2 py-2.5 text-right align-middle">Amount (₹)</th>
             </tr>
           </thead>
           <tbody>
             {data.gridCost.map((c, i) => (
               <tr key={i}>
-                <td className="border border-brand/30 px-1 py-1 text-center">{i + 1}</td>
-                <td className="border border-brand/30 px-1 py-1">{c.particular}</td>
-                <td className="border border-brand/30 px-1 py-1 text-right">{c.amount}</td>
+                <td className="border border-brand/30 px-2 py-2.5 text-center align-middle">{i + 1}</td>
+                <td className="border border-brand/30 px-2 py-2.5 align-middle">{c.particular}</td>
+                <td className="border border-brand/30 px-2 py-2.5 text-right align-middle">{c.amount}</td>
               </tr>
             ))}
             <tr className="bg-brand/15 font-bold">
-              <td colSpan={2} className="border border-brand-dark px-1 py-1.5 text-right">TOTAL AMOUNT</td>
-              <td className="border border-brand-dark px-1 py-1.5 text-right">{data.gridTotal}</td>
+              <td colSpan={2} className="border border-brand-dark px-2 py-3 text-right align-middle">TOTAL AMOUNT</td>
+              <td className="border border-brand-dark px-2 py-3 text-right align-middle">{data.gridTotal}</td>
             </tr>
           </tbody>
         </table>
 
         <SectionTitle>How Your System Works</SectionTitle>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2 text-xs">
           {(data.systemType === "Hybrid"
             ? [
-              "Generation > consumption — powers home & charges battery for night use",
-              "Generation < consumption — uses stored battery energy to reduce grid imports",
-              "Grid Outage / Night — seamless switch to battery backup for 24/7 power",
+              "Generation greater than consumption — power home and charge battery for night use",
+              "Generation less than consumption — use stored battery energy to minimize grid imports",
+              "Grid Outage / Night — seamless switch to battery backup for 24/7 power security",
             ]
             : [
-              "Generation > consumption — export excess units to utility grid",
-              "Generation < consumption — use solar units & import additional from grid",
+              "Generation greater than consumption — export excess units to utility grid",
+              "Generation less than consumption — use solar units and import additional units from utility grid",
               "Night — import electricity from utility grid",
             ]
           ).map((t, i) => (
-            <div key={i} className="border border-brand/40 rounded p-2 bg-brand/5 text-center text-[9px] leading-relaxed">{t}</div>
+            <div key={i} className="border border-brand/40 rounded p-2 bg-brand/5 text-center">{t}</div>
           ))}
         </div>
-        <div className="mt-3 flex justify-center">
+        <div className="mt-4 flex justify-center">
           <img src={data.systemType === "Hybrid" ? hybridFlow : systemFlow} alt="System flow diagram" className="w-full max-w-[520px] object-contain" />
         </div>
       </Page>
