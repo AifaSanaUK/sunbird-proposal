@@ -7,7 +7,7 @@ import { ProposalPreview } from "@/components/ProposalPreview";
 import { generatePdf } from "@/lib/generate-pdf";
 import { toast } from "sonner";
 import { useAuth } from "@/lib/auth";
-import logo from "@/assets/sunbird-logo.png";
+import logo from "@/assets/sunbird-logo.jpg";
 
 const Index = () => {
   const [data, setData] = useState<ProposalData>(defaultProposal);
@@ -31,15 +31,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-white border-b border-border sticky top-0 z-10 shadow-sm">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3 min-w-0">
-            <img src={logo} alt="Sunbird Power Solutions" className="h-16 sm:h-20 object-contain shrink-0" />
-            <div className="hidden sm:block min-w-0">
-              <h1 className="font-bold text-base leading-tight text-foreground truncate">Proposal Generator</h1>
-              <p className="text-xs text-muted-foreground truncate">Fill details, preview live, download as PDF</p>
-            </div>
+      <header className="bg-white border-b border-border sticky top-0 z-10 shadow-sm" style={{height: '72px'}}>
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 h-full flex items-center justify-between relative gap-3">
+          {/* Left: Logo */}
+          <div className="flex items-center shrink-0">
+            <img src={logo} alt="Sunbird Power Solutions" className="h-6 sm:h-8 object-contain" />
           </div>
+          {/* Center: Title — absolutely positioned to be truly centered */}
+          <div className="absolute left-1/2 -translate-x-1/2 text-center hidden sm:block">
+            <h1 className="font-bold text-base leading-tight text-foreground">Proposal Generator</h1>
+            <p className="text-xs text-muted-foreground">Fill details, preview live, download as PDF</p>
+          </div>
+          {/* Right: Buttons */}
           <div className="flex gap-2 shrink-0">
             <Button variant="outline" size="sm" onClick={() => setData(defaultProposal)}>
               <RefreshCw className="h-4 w-4 sm:mr-1" /><span className="hidden sm:inline">Reset</span>
@@ -55,7 +58,7 @@ const Index = () => {
       </header>
 
       <main className="max-w-[1600px] mx-auto px-4 py-6 grid lg:grid-cols-[420px_1fr] gap-6">
-        <aside className="lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+        <aside className="lg:sticky lg:top-[72px] lg:self-start lg:max-h-[calc(100vh-72px)] lg:overflow-y-auto">
           <ProposalForm data={data} onChange={setData} />
         </aside>
         <section className="overflow-x-auto">
