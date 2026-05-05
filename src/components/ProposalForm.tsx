@@ -18,16 +18,21 @@ export const ProposalForm = ({ data, onChange }: Props) => {
     const hasBattery = bom.some(b => b.particular.toLowerCase() === "battery");
     if (value === "Hybrid" && !hasBattery) {
       bom = [...bom, { particular: "Battery", specification: "", make: "" }];
-      // pad to 20 rows
       while (bom.length < 20) bom.push({ particular: "", specification: "", make: "" });
     } else if (value === "ON-GRID" && hasBattery) {
-      // Remove battery row and trailing empty rows added for hybrid
       bom = bom.filter(b => b.particular.toLowerCase() !== "battery");
       while (bom.length > 0 && !bom[bom.length - 1].particular && !bom[bom.length - 1].specification && !bom[bom.length - 1].make) {
         bom.pop();
       }
     }
-    onChange({ ...data, systemType: value, bom });
+
+    const batteryWarranty = "Lithium ion battery warranted by SUNWAYS - 7 Years";
+    let warranty = data.warranty.filter(w => w !== batteryWarranty);
+    if (value === "Hybrid") {
+      warranty = [warranty[0], batteryWarranty, ...warranty.slice(1)].filter(Boolean) as string[];
+    }
+
+    onChange({ ...data, systemType: value, bom, warranty });
   };
 
 
