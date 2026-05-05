@@ -35,7 +35,8 @@ const Login = () => {
         </div>
         <Card className="p-8 shadow-xl border-brand/20">
           <div className="text-center mb-6">
-            <h1 className="text-2xl font-bold text-foreground">Admin Login</h1>
+            <span>Welcome</span>
+            <h1 className="text-2xl font-bold text-foreground">Admin_Login</h1>
             <p className="text-sm text-muted-foreground mt-1">Sign in to manage proposals</p>
           </div>
           <form onSubmit={onSubmit} className="space-y-4">
