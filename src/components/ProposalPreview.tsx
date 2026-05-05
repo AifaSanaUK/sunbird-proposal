@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import logo from "@/assets/sunbird-logo.png";
 import systemFlow from "@/assets/system-flow.png";
+import hybridFlow from "@/assets/hybrid-system-flow.png";
 import seal from "@/assets/company-seal.png";
 import coverImage from "@/assets/proposal-cover.png";
 import whatWeDo from "@/assets/what-we-do.png";
@@ -178,16 +179,23 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
 
         <SectionTitle>How Your System Works</SectionTitle>
         <div className="grid grid-cols-3 gap-2 text-xs">
-          {[
-            "Generation greater than consumption — export excess units to utility grid",
-            "Generation less than consumption — use solar units and import additional units from utility grid",
-            "Night — import electricity from utility grid",
-          ].map((t, i) => (
+          {(data.systemType === "Hybrid"
+            ? [
+                "Generation greater than consumption — power home and charge battery for night use",
+                "Generation less than consumption — use stored battery energy to minimize grid imports",
+                "Grid Outage / Night — seamless switch to battery backup for 24/7 power security",
+              ]
+            : [
+                "Generation greater than consumption — export excess units to utility grid",
+                "Generation less than consumption — use solar units and import additional units from utility grid",
+                "Night — import electricity from utility grid",
+              ]
+          ).map((t, i) => (
             <div key={i} className="border border-brand/40 rounded p-2 bg-brand/5 text-center">{t}</div>
           ))}
         </div>
         <div className="mt-4 flex justify-center">
-          <img src={systemFlow} alt="System flow diagram showing solar, home, and grid connections" className="w-full max-w-[520px] object-contain" />
+          <img src={data.systemType === "Hybrid" ? hybridFlow : systemFlow} alt="System flow diagram" className="w-full max-w-[520px] object-contain" />
         </div>
       </Page>
 
