@@ -39,10 +39,10 @@ export const defaultProposal: ProposalData = {
   unitsPerSunnyDay: "12",
   bom: [
     { particular: "Solar panel", specification: "MONOPERC HALF CUT DCR MODULE-540 WATT 9nos", make: "ADANI" },
-    { particular: "Inverter", specification: "5KW 1 Phase", make: "SUNWAYS/GOODWE" },
+    { particular: "Inverter", specification: "3KW 1 Phase", make: "SUNWAYS/GOODWE" },
     { particular: "Panel structure for flat roof", specification: "With 1 meter panel height", make: "APPOLO/EQUIVALENT" },
     { particular: "Solar meter", specification: "1 phase", make: "Secure/L&T" },
-    { particular: "DCDB", specification: "5kw 1 IN 2 OUT", make: "C&S/Havells/Finder" },
+    { particular: "DCDB", specification: "3KW 1 IN 2 OUT", make: "C&S/Havells/Finder" },
     { particular: "ACDB", specification: "220V, 50HZ", make: "C&S/Havells/Finder" },
     { particular: "DC Cable", specification: "4SQ - As much as needed", make: "Realcab/Polycab/Equivalent" },
     { particular: "AC cable", specification: "4SQ - As much as needed", make: "Realcab/RR/Equivalent" },
