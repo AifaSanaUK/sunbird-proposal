@@ -98,12 +98,12 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
       <Page>
         <Header />
         <SectionTitle>Bill of Material</SectionTitle>
-        <table className="w-full text-[10px] border-collapse" style={{tableLayout: 'fixed', wordBreak: 'break-word'}}>
+        <table className="w-full text-[10px] border-collapse" style={{ tableLayout: 'fixed', wordBreak: 'break-word' }}>
           <colgroup>
-            <col style={{width: '8%'}} />
-            <col style={{width: '28%'}} />
-            <col style={{width: '40%'}} />
-            <col style={{width: '24%'}} />
+            <col style={{ width: '8%' }} />
+            <col style={{ width: '28%' }} />
+            <col style={{ width: '40%' }} />
+            <col style={{ width: '24%' }} />
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
@@ -136,11 +136,11 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         <Header />
         <SectionTitle>Project Cost</SectionTitle>
         <div className="text-sm font-semibold mb-2">{data.capacityKwp}KWP {data.systemType} SOLAR POWER PLANT</div>
-        <table className="w-full text-[10px] border-collapse mb-6" style={{tableLayout: 'fixed', wordBreak: 'break-word'}}>
+        <table className="w-full text-[10px] border-collapse mb-6" style={{ tableLayout: 'fixed', wordBreak: 'break-word' }}>
           <colgroup>
-            <col style={{width: '10%'}} />
-            <col style={{width: '70%'}} />
-            <col style={{width: '20%'}} />
+            <col style={{ width: '10%' }} />
+            <col style={{ width: '70%' }} />
+            <col style={{ width: '20%' }} />
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
@@ -165,11 +165,11 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         </table>
 
         <SectionTitle>For Grid Connectivity</SectionTitle>
-        <table className="w-full text-[10px] border-collapse mb-6" style={{tableLayout: 'fixed', wordBreak: 'break-word'}}>
+        <table className="w-full text-[10px] border-collapse mb-6" style={{ tableLayout: 'fixed', wordBreak: 'break-word' }}>
           <colgroup>
-            <col style={{width: '10%'}} />
-            <col style={{width: '70%'}} />
-            <col style={{width: '20%'}} />
+            <col style={{ width: '10%' }} />
+            <col style={{ width: '70%' }} />
+            <col style={{ width: '20%' }} />
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
@@ -234,11 +234,11 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           </colgroup>
           <tbody>
             {[
-              { label: "BANK", value: data.bank.bank },
-              { label: "BRANCH", value: data.bank.branch },
-              { label: "ACCOUNT NUMBER", value: data.bank.accountNumber },
-              { label: "ACCOUNT NAME", value: data.bank.accountName },
-              { label: "IFSC CODE", value: data.bank.ifsc },
+              { label: "Bank", value: data.bank.bank },
+              { label: "Branch", value: data.bank.branch },
+              { label: "Account Number", value: data.bank.accountNumber },
+              { label: "Account Name", value: data.bank.accountName },
+              { label: "Ifsc Code", value: data.bank.ifsc },
             ].map((row, i) => (
               <tr key={i}>
                 <td
