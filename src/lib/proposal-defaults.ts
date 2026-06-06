@@ -22,7 +22,13 @@ export type ProposalData = {
   gridCost: CostItem[];
   gridTotal: string;
   // Bank
-  bank: BankDetails;
+  bank: {
+    bank: string;
+    branch: string;
+    accountNumber: string;
+    accountName: string;
+    ifsc: string;
+  };
   // Terms / warranty
   terms: string[];
   warranty: string[];
@@ -37,6 +43,13 @@ export const defaultProposal: ProposalData = {
   capacityKwp: "3",
   systemType: "ON-GRID",
   unitsPerSunnyDay: "12",
+  bank: {
+    bank: "State Bank of India",
+    branch: "Chevarambalam",
+    accountNumber: "45225938979",
+    accountName: "Sunbird Power Solution",
+    ifsc: "SBIN0071030",
+  },
   bom: [
     { particular: "Solar panel", specification: "MONOPERC HALF CUT DCR MODULE-540 WATT 9nos", make: "ADANI" },
     { particular: "Inverter", specification: "3KW 1 Phase", make: "SUNWAYS/GOODWE" },
@@ -67,7 +80,7 @@ export const defaultProposal: ProposalData = {
     { particular: "Solar Registration Fees ₹1000 + GST/kW (paid extra to KSEB; 80% refundable after 6 months of energization & commissioning)", amount: "" },
   ],
   gridTotal: "",
-  bank: { bank: "", branch: "", accountNumber: "", accountName: "Sunbird Power Solutions", ifsc: "" },
+
   exclusions: [
     "GST Included in the price (5% for solar module and inverter, 18% for other items and labor).",
     "Structure Cost (1m height) Included.",
@@ -93,4 +106,5 @@ export const defaultProposal: ProposalData = {
     "Solar PV Modules: ADANI (As per MNRE standard) — 12-year manufacturer warranty and 25/30-year performance warranty as per the Module Manufacturer.",
     "Service — 5 Years free service (panel washing not included).",
   ],
+
 };

@@ -223,7 +223,37 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           {data.exclusions.map((e, i) => <li key={i}>{e}</li>)}
         </ul>
 
-
+        <SectionTitle>Bank Details</SectionTitle>
+        <table
+          className="w-full text-[11px] border-collapse mb-6"
+          style={{ tableLayout: "fixed", wordBreak: "break-word" }}
+        >
+          <colgroup>
+            <col style={{ width: "35%" }} />
+            <col style={{ width: "65%" }} />
+          </colgroup>
+          <tbody>
+            {[
+              { label: "BANK", value: data.bank.bank },
+              { label: "BRANCH", value: data.bank.branch },
+              { label: "ACCOUNT NUMBER", value: data.bank.accountNumber },
+              { label: "ACCOUNT NAME", value: data.bank.accountName },
+              { label: "IFSC CODE", value: data.bank.ifsc },
+            ].map((row, i) => (
+              <tr key={i}>
+                <td
+                  className="border border-brand/40 px-3 py-3 font-bold align-middle"
+                  style={{ backgroundColor: "#dbeeff" }}
+                >
+                  {row.label}
+                </td>
+                <td className="border border-brand/40 px-3 py-3 align-middle">
+                  {row.value}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
         <SectionTitle>Terms & Conditions</SectionTitle>
         <ul className="list-disc pl-6 text-sm space-y-1">
