@@ -35,6 +35,37 @@ export const ProposalForm = ({ data, onChange }: Props) => {
     onChange({ ...data, systemType: value, bom, warranty });
   };
 
+  const handleCapacityChange = (value: string) => {
+    const capVal = parseFloat(value) || 0;
+    
+    // 1. Update bom
+    const bom = data.bom.map(item => {
+      const p = item.particular.toLowerCase();
+      if (p === "dcdb" || p === "inverter") {
+        const updatedSpec = item.specification.replace(/\b[\d.\s]*KW\b/gi, `${value}KW`);
+        return { ...item, specification: updatedSpec };
+      }
+      return item;
+    });
+
+    // 2. Update KSEB Registration Fee in exclusions list
+    const regFee = Math.round(capVal * 1180);
+    const refFee = Math.round(capVal * 800);
+    const exclusions = data.exclusions.map(ex => {
+      if (ex.includes("KSEB Registration Fee")) {
+        return `KSEB Registration Fee is Excluded (₹${regFee}/-) (80% i.e. ₹${refFee}/- refundable to the Customer from KSEB within 6 months after installation).`;
+      }
+      return ex;
+    });
+
+    onChange({
+      ...data,
+      capacityKwp: value,
+      bom,
+      exclusions,
+    });
+  };
+
 
   return (
     <Card className="p-5 space-y-5">
@@ -45,7 +76,7 @@ export const ProposalForm = ({ data, onChange }: Props) => {
           <div><Label>Company Name</Label><Input value={data.companyName} onChange={e => set("companyName", e.target.value)} placeholder="Sunbird Power Solutions" /></div>
           <div><Label>Place</Label><Input value={data.place} onChange={e => set("place", e.target.value)} /></div>
           <div><Label>Date</Label><Input type="date" value={data.date} onChange={e => set("date", e.target.value)} /></div>
-          <div><Label>Capacity (kWp)</Label><Input value={data.capacityKwp} onChange={e => set("capacityKwp", e.target.value)} /></div>
+          <div><Label htmlFor="capacityKwp">Capacity (kWp)</Label><Input id="capacityKwp" value={data.capacityKwp} onChange={e => handleCapacityChange(e.target.value)} /></div>
           <div><Label>Units / sunny day</Label><Input value={data.unitsPerSunnyDay} onChange={e => set("unitsPerSunnyDay", e.target.value)} /></div>
           <div className="col-span-2">
             <Label>System Type</Label>
