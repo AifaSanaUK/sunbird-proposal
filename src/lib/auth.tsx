@@ -1,8 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useState, ReactNode } from "react";
 
 const STORAGE_KEY = "sunbird_admin_auth";
-const ADMIN_EMAIL = "sunbirdpowersolution@gmail.com";
-const ADMIN_PASSWORD = "sunbird@2026";
+const ADMIN_EMAIL = "sunbird@gmail.com";
+const ADMIN_PASSWORD = "sunbird@1234";
 
 type AuthContextValue = {
   isAuthenticated: boolean;
