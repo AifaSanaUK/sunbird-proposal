@@ -98,28 +98,28 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
       <Page>
         <Header />
         <SectionTitle>Bill of Material</SectionTitle>
-        <table className="w-full text-[10px] border-collapse" style={{ tableLayout: 'fixed', wordBreak: 'break-word' }}>
+        <table className="w-full border-collapse" style={{ tableLayout: 'fixed', wordBreak: 'break-word', fontSize: '12px' }}>
           <colgroup>
-            <col style={{ width: '8%' }} />
-            <col style={{ width: '28%' }} />
-            <col style={{ width: '40%' }} />
+            <col style={{ width: '6%' }} />
             <col style={{ width: '24%' }} />
+            <col style={{ width: '40%' }} />
+            <col style={{ width: '30%' }} />
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
-              <th className="border border-brand-dark px-2 py-4 text-center align-middle leading-relaxed">No</th>
-              <th className="border border-brand-dark px-2 py-4 text-left align-middle leading-relaxed">Particular</th>
-              <th className="border border-brand-dark px-2 py-4 text-left align-middle leading-relaxed">Specification</th>
-              <th className="border border-brand-dark px-2 py-4 text-left align-middle leading-relaxed">Make</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-center align-middle leading-normal">No</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-left align-middle leading-normal">Particular</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-left align-middle leading-normal">Specification</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-left align-middle leading-normal">Make</th>
             </tr>
           </thead>
           <tbody>
             {data.bom.map((row, i) => (
               <tr key={i} className={i % 2 ? "bg-brand/5" : ""}>
-                <td className="border border-brand/30 px-2 py-4 text-center align-middle leading-relaxed">{i + 1}</td>
-                <td className="border border-brand/30 px-2 py-4 align-middle leading-relaxed">{row.particular}</td>
-                <td className="border border-brand/30 px-2 py-4 align-middle leading-relaxed">{row.specification}</td>
-                <td className="border border-brand/30 px-2 py-4 align-middle leading-relaxed">{row.make}</td>
+                <td className="border border-brand/30 px-3 py-2.5 text-center align-middle leading-normal">{i + 1}</td>
+                <td className="border border-brand/30 px-3 py-2.5 align-middle leading-normal">{row.particular}</td>
+                <td className="border border-brand/30 px-3 py-2.5 align-middle leading-normal">{row.specification}</td>
+                <td className="border border-brand/30 px-3 py-2.5 align-middle leading-normal">{row.make}</td>
               </tr>
             ))}
           </tbody>
@@ -136,7 +136,7 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
         <Header />
         <SectionTitle>Project Cost</SectionTitle>
         <div className="text-sm font-semibold mb-2">{data.capacityKwp}KWP {data.systemType} SOLAR POWER PLANT</div>
-        <table className="w-full text-[10px] border-collapse mb-6" style={{ tableLayout: 'fixed', wordBreak: 'break-word' }}>
+        <table className="w-full border-collapse mb-6" style={{ tableLayout: 'fixed', wordBreak: 'break-word', fontSize: '12px' }}>
           <colgroup>
             <col style={{ width: '10%' }} />
             <col style={{ width: '70%' }} />
@@ -144,28 +144,28 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
-              <th className="border border-brand-dark px-2 py-4 text-center align-middle leading-relaxed">SL.NO</th>
-              <th className="border border-brand-dark px-2 py-4 text-left align-middle leading-relaxed">Particulars</th>
-              <th className="border border-brand-dark px-2 py-4 text-right align-middle leading-relaxed">Amount (₹)</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-center align-middle leading-normal">SL.NO</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-left align-middle leading-normal">Particulars</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-right align-middle leading-normal">Amount (₹)</th>
             </tr>
           </thead>
           <tbody>
             {data.projectCost.map((c, i) => (
               <tr key={i}>
-                <td className="border border-brand/30 px-2 py-4 text-center align-middle leading-relaxed">{i + 1}</td>
-                <td className="border border-brand/30 px-2 py-4 align-middle leading-relaxed">{c.particular}</td>
-                <td className="border border-brand/30 px-2 py-4 text-right align-middle leading-relaxed">{c.amount}</td>
+                <td className="border border-brand/30 px-3 py-2.5 text-center align-middle leading-normal">{i + 1}</td>
+                <td className="border border-brand/30 px-3 py-2.5 align-middle leading-normal">{c.particular}</td>
+                <td className="border border-brand/30 px-3 py-2.5 text-right align-middle leading-normal">{c.amount}</td>
               </tr>
             ))}
             <tr className="bg-brand/15 font-bold">
-              <td colSpan={2} className="border border-brand-dark px-2 py-5 text-right align-middle text-[9px] leading-relaxed">TOTAL SYSTEM COST TO BE PAID BY CUSTOMER</td>
-              <td className="border border-brand-dark px-2 py-5 text-right align-middle leading-relaxed">{data.totalSystemCost}</td>
+              <td colSpan={2} className="border border-brand-dark px-3 py-2.5 text-right align-middle leading-normal">TOTAL SYSTEM COST TO BE PAID BY CUSTOMER</td>
+              <td className="border border-brand-dark px-3 py-2.5 text-right align-middle leading-normal">{data.totalSystemCost}</td>
             </tr>
           </tbody>
         </table>
 
         <SectionTitle>For Grid Connectivity</SectionTitle>
-        <table className="w-full text-[10px] border-collapse mb-6" style={{ tableLayout: 'fixed', wordBreak: 'break-word' }}>
+        <table className="w-full border-collapse mb-6" style={{ tableLayout: 'fixed', wordBreak: 'break-word', fontSize: '12px' }}>
           <colgroup>
             <col style={{ width: '10%' }} />
             <col style={{ width: '70%' }} />
@@ -173,22 +173,22 @@ export const ProposalPreview = forwardRef<HTMLDivElement, { data: ProposalData }
           </colgroup>
           <thead>
             <tr className="bg-brand text-brand-foreground">
-              <th className="border border-brand-dark px-2 py-4 text-center align-middle leading-relaxed">SL.NO</th>
-              <th className="border border-brand-dark px-2 py-4 text-left align-middle leading-relaxed">Particulars</th>
-              <th className="border border-brand-dark px-2 py-4 text-right align-middle leading-relaxed">Amount (₹)</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-center align-middle leading-normal">SL.NO</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-left align-middle leading-normal">Particulars</th>
+              <th className="border border-brand-dark px-3 py-2.5 text-right align-middle leading-normal">Amount (₹)</th>
             </tr>
           </thead>
           <tbody>
             {data.gridCost.map((c, i) => (
               <tr key={i}>
-                <td className="border border-brand/30 px-2 py-4 text-center align-middle leading-relaxed">{i + 1}</td>
-                <td className="border border-brand/30 px-2 py-4 align-middle leading-relaxed">{c.particular}</td>
-                <td className="border border-brand/30 px-2 py-4 text-right align-middle leading-relaxed">{c.amount}</td>
+                <td className="border border-brand/30 px-3 py-2.5 text-center align-middle leading-normal">{i + 1}</td>
+                <td className="border border-brand/30 px-3 py-2.5 align-middle leading-normal">{c.particular}</td>
+                <td className="border border-brand/30 px-3 py-2.5 text-right align-middle leading-normal">{c.amount}</td>
               </tr>
             ))}
             <tr className="bg-brand/15 font-bold">
-              <td colSpan={2} className="border border-brand-dark px-2 py-5 text-right align-middle leading-relaxed">TOTAL AMOUNT</td>
-              <td className="border border-brand-dark px-2 py-5 text-right align-middle leading-relaxed">{data.gridTotal}</td>
+              <td colSpan={2} className="border border-brand-dark px-3 py-2.5 text-right align-middle leading-normal">TOTAL AMOUNT</td>
+              <td className="border border-brand-dark px-3 py-2.5 text-right align-middle leading-normal">{data.gridTotal}</td>
             </tr>
           </tbody>
         </table>
